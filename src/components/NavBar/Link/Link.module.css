@@ -1,0 +1,13 @@
+.link{
+    width: 100%;
+    padding: 8px 0 8px 12px;
+    background-color: dimgrey;
+    text-decoration: none;
+    color: #fff;
+}
+.link:not(:last-child){
+    margin-bottom: 8px;
+}
+.link:hover{
+    background-color: #000;
+}

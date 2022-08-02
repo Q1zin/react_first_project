@@ -1,0 +1,8 @@
+.myPosts{
+    outline: 1px red solid;
+    padding: 16px 20px;
+    position: relative;
+}
+.title{
+    margin-bottom: 20px;
+}

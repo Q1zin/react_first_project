@@ -1,0 +1,12 @@
+.header{
+    width: 100%;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    padding: 20px 40px;
+    background-color: blanchedalmond;
+}
+.logo{
+    width: 30px;
+    margin-right: 10px;
+}
