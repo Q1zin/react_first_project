@@ -9,5 +9,8 @@
     margin-bottom: 8px;
 }
 .link:hover{
-    background-color: #000;
+    background-color: #93a9ee;
+}
+.active{
+    background-color: #3e66f6;
 }
