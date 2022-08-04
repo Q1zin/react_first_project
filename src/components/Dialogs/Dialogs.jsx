@@ -3,11 +3,11 @@ import classes from './Dialogs.module.css'
 import DialogList from "./DialogList/DialogList";
 import Messages from "./Messages/Messages";
 
-const Dialogs = ()=>{
+const Dialogs = (props)=>{
     return(
         <div className={classes.dialogsWrap}>
-            <DialogList />
-            <Messages />
+            <DialogList state={props.state.dialogs} />
+            <Messages state={props.state.messages} />
         </div>
     )
 }

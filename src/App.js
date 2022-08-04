@@ -8,8 +8,9 @@ import {Navigate, Route, Routes} from "react-router-dom";
 import News from "./components/News/News";
 import Music from "./components/Music/Music";
 import Settings from "./components/Settings/Settings";
+import state from "./redux/state";
 
-function App() {
+function App(props) {
     const shouldRedirect = true;
 
   return (
@@ -20,8 +21,8 @@ function App() {
                 <Routes>
                     <Route  path="/" element={shouldRedirect ? (<Navigate replace to="/profile" />) : (<Profile />)
                     } />
-                    <Route index path="/profile" element={<Profile />} />
-                    <Route path="/messages/*" element={<Dialogs />} />
+                    <Route index path="/profile" element={<Profile state={props.state.profilePage} />} />
+                    <Route path="/messages/*" element={<Dialogs state={props.state.messagePage} />} />
                     <Route path="/news" element={<News />} />
                     <Route path="/music" element={<Music />} />
                     <Route path="/settings" element={<Settings />} />
