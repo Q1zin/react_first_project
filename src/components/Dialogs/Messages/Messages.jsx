@@ -3,11 +3,18 @@ import classes from './Messages.module.css'
 import Message from "./Message/Message";
 
 const Messages = () => {
+    let messages = [
+        {author: "Vova", message: "Hi!"},
+        {author: "I", message: "Hi, how are u?"},
+        {author: "Vova", message: "I am GOOD! are u?..."}
+    ]
+
+    let messageList = messages.map(message => <Message author={message.author} message={message.message} />)
+
+
     return (
         <div className={classes.messages}>
-            <Message author="Вова" message="Привет!" />
-            <Message author="Я" message="Привет! Как ты?" />
-            <Message author="Вова" message="Да в общем всё хорошо, а ты как?" />
+            { messageList }
         </div>
     );
 };
