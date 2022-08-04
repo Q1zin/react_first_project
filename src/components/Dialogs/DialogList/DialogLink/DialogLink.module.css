@@ -1,0 +1,32 @@
+.dialogLink{
+    display: flex;
+    align-items: center;
+    justify-content: start;
+    padding: 10px 20px;
+    text-decoration: none;
+}
+.userImg{
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    margin-right: 6px;
+}
+.userName{
+    color: black
+}
+.dialogLink:not(:last-child){
+    border-bottom: 1px grey solid;
+}
+.active{
+    background-color: #818181;
+
+}
+.active span{
+    color: #fff
+}
+.dialogLink:hover{
+    background-color: #dadada;
+}
+.active:hover{
+    background-color: #818181;
+}

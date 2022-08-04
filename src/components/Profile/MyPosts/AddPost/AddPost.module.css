@@ -1,0 +1,11 @@
+.addPost{
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 20px;
+}
+.input{
+    width: 90%;
+}
+.addPostBtn{
+    width: 9%;
+}

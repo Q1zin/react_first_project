@@ -14,3 +14,6 @@
 .active{
     background-color: #3e66f6;
 }
+.active:hover{
+    background-color: #3e66f6;
+}

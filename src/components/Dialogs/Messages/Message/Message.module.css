@@ -1,0 +1,18 @@
+.messageWrap{
+    display: flex;
+    align-items: center;
+    padding: 10px 0;
+    border-bottom: 1px grey solid;
+}
+.messageLeft{
+    margin-right: 10px;
+}
+.userImg{
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+}
+.messageRight{
+    display: flex;
+    flex-direction: column;
+}
