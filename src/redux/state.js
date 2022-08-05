@@ -1,9 +1,11 @@
+import {renderFullPage} from "../render";
+
 let state = {
     profilePage: {
         posts: [
-            {comment: "It's very bad!", likeCount: "176"},
-            {comment: "Okey, -Ycraine", likeCount: "24"},
-            {comment: "It's very good!", likeCount: "112"}
+            {id: 1, comment: "It's very bad!", likeCount: 176},
+            {id: 2, comment: "Okey, -Ycraine", likeCount: 24},
+            {id: 3, comment: "It's very good!", likeCount: 112}
         ]
     },
     messagePage: {
@@ -19,6 +21,16 @@ let state = {
             {author: "Vova", message: "I am GOOD! are u?..."}
         ]
     }
+}
+
+export let addPost = (postMessage) => {
+    let newPost = {
+        id: 4,
+        comment: postMessage,
+        likeCount: 0
+    }
+    state.profilePage.posts.push(newPost)
+    renderFullPage(state)
 }
 
 export default state
