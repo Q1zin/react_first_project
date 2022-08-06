@@ -1,4 +1,4 @@
-import {renderFullPage} from "../render";
+let renderFullPage
 
 let state = {
     profilePage: {
@@ -56,5 +56,8 @@ export let addMessage = ()=>{
     renderFullPage(state)
 }
 
+export const subscribe = (observer) =>{
+    renderFullPage = observer
+}
 
 export default state
