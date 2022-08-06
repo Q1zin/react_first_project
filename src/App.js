@@ -9,7 +9,7 @@ import News from "./components/News/News";
 import Music from "./components/Music/Music";
 import Settings from "./components/Settings/Settings";
 import {addPost} from "./redux/state";
-import Friends from "./Friends/Friends";
+import Friends from "./components/Friends/Friends";
 
 function App(props) {
     const shouldRedirect = true;
