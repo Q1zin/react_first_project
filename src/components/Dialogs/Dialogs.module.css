@@ -1,5 +1,5 @@
 .dialogsWrap{
     border-right: 1px #3f3f40 solid;
     display: flex;
-    align-items: flex-start;
+    min-height: calc( 100vh - 80px );
 }

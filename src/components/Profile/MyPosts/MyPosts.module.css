@@ -5,3 +5,7 @@
 .title{
     margin-bottom: 20px;
 }
+.postWrap{
+    display: flex;
+    flex-direction: column-reverse;
+}

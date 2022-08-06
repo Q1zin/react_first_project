@@ -4,8 +4,8 @@ import App from "./App";
 import {BrowserRouter} from "react-router-dom";
 import state from './redux/state'
 
+const root = ReactDOM.createRoot(document.getElementById('root'));
 export let renderFullPage = (state) => {
-    const root = ReactDOM.createRoot(document.getElementById('root'));
     root.render(
         <BrowserRouter>
             <App state={state} />

@@ -9,6 +9,7 @@ import News from "./components/News/News";
 import Music from "./components/Music/Music";
 import Settings from "./components/Settings/Settings";
 import {addPost} from "./redux/state";
+import Friends from "./Friends/Friends";
 
 function App(props) {
     const shouldRedirect = true;
@@ -25,6 +26,7 @@ function App(props) {
                     <Route path="/messages/*" element={<Dialogs state={props.state.messagePage} />} />
                     <Route path="/news" element={<News />} />
                     <Route path="/music" element={<Music />} />
+                    <Route path="/friends" element={<Friends />} />
                     <Route path="/settings" element={<Settings />} />
                 </Routes>
             </div>

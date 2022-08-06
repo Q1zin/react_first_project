@@ -1,6 +1,8 @@
 import React from 'react';
 import classes from './Messages.module.css'
 import Message from "./Message/Message";
+import AddMessage from "./AddMessage/AddMessage";
+import {addMessage, updateTextMessage} from "../../../redux/state";
 
 const Messages = (props) => {
 
@@ -10,6 +12,9 @@ const Messages = (props) => {
     return (
         <div className={classes.messages}>
             { messageList }
+            <AddMessage textMessage={props.textMessage}
+                        updateTextMessage={props.updateTextMessage}
+                        addMessage={props.addMessage} />
         </div>
     );
 };

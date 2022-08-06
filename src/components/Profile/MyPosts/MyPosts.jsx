@@ -2,6 +2,7 @@ import React from 'react';
 import classes from "./MyPosts.module.css";
 import Post from "./Post/Post";
 import AddPost from "./AddPost/AddPost";
+import {updateTextPost} from "../../../redux/state";
 
 const MyPosts = (props) => {
     let postList = props.posts.map(post =>
@@ -11,8 +12,11 @@ const MyPosts = (props) => {
     return (
         <div className={classes.myPosts}>
             <h2 className={classes.title}>My posts</h2>
-            <AddPost addPost={props.addPost} />
-            { postList }
+            <AddPost addPost={props.addPost} textPost={props.textPost} updateTextPost={props.updateTextPost} />
+            <div className={classes.postWrap}>
+                { postList }
+            </div>
+
         </div>
     );
 };
