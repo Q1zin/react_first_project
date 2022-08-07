@@ -10,8 +10,7 @@ const Dialogs = (props)=>{
             <DialogList state={props.state.dialogs} />
             <Messages state={props.state.messages}
                       textMessage={props.state.textMessage}
-                      updateTextMessage={updateTextMessage}
-                      addMessage={addMessage}
+                      dispatch={props.dispatch}
             />
         </div>
     )

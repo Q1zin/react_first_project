@@ -8,7 +8,6 @@ import {Navigate, Route, Routes} from "react-router-dom";
 import News from "./components/News/News";
 import Music from "./components/Music/Music";
 import Settings from "./components/Settings/Settings";
-import {addPost} from "./redux/state";
 import Friends from "./components/Friends/Friends";
 
 function App(props) {
@@ -22,8 +21,12 @@ function App(props) {
                 <Routes>
                     <Route  path="/" element={shouldRedirect ? (<Navigate replace to="/profile" />) : (<Profile />)
                     } />
-                    <Route index path="/profile" element={<Profile state={props.state.profilePage} addPost={addPost} />} />
-                    <Route path="/messages/*" element={<Dialogs state={props.state.messagePage} />} />
+                    <Route index path="/profile" element={
+                        <Profile state={props.state.profilePage}
+                                 dispatch={props.dispatch} />} />
+                    <Route path="/messages/*" element={
+                        <Dialogs state={props.state.messagePage}
+                                 dispatch={props.dispatch} />} />
                     <Route path="/news" element={<News />} />
                     <Route path="/music" element={<Music />} />
                     <Route path="/friends" element={<Friends />} />

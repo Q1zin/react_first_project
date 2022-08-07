@@ -13,8 +13,7 @@ const Messages = (props) => {
         <div className={classes.messages}>
             { messageList }
             <AddMessage textMessage={props.textMessage}
-                        updateTextMessage={props.updateTextMessage}
-                        addMessage={props.addMessage} />
+                        dispatch={props.dispatch} />
         </div>
     );
 };
