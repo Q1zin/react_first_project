@@ -1,14 +1,16 @@
 import React from 'react';
 import classes from "./AddMessage.module.css"
+import {addMessageActionCreator, updateTextMessageActionCreator} from "../../../../redux/state";
 
 const AddMessage = (props) => {
     let inputMessage = React.createRef()
 
     const changeTextMessage = ()=>{
-        props.dispatch({type:"UPDATE-TEXT-MESSAGE", text: inputMessage.current.value})
+
+        props.dispatch(updateTextMessageActionCreator(inputMessage.current.value))
     }
     const addMessage = ()=>{
-        props.dispatch({type: "ADD-MESSAGE"})
+        props.dispatch(addMessageActionCreator())
     }
 
     return (

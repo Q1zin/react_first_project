@@ -1,3 +1,15 @@
+const UPDATE_TEXT_POST = "UPDATE-TEXT-POST"
+const UPDATE_TEXT_MESSAGE = "UPDATE-TEXT-MESSAGE"
+const ADD_POST = "ADD-POST"
+const ADD_MESSAGE = "ADD-MESSAGE"
+
+
+
+export const updateTextPostActionCreator = (text)=>({type: UPDATE_TEXT_POST, text: text})
+export const updateTextMessageActionCreator = (text)=>({type: UPDATE_TEXT_MESSAGE, text: text})
+export const addPostActionCreator = ()=>({type: ADD_POST})
+export const addMessageActionCreator = ()=>({type: ADD_MESSAGE})
+
 let store = {
     _state: {
         profilePage: {
@@ -30,18 +42,17 @@ let store = {
     getState(){
         return this._state
     },
-
     dispatch(action){
         switch (action.type) {
-            case "UPDATE-TEXT-POST":
+            case UPDATE_TEXT_POST:
                 this._state.profilePage.textPost = action.text
                 this._renderFullPage()
                 break;
-            case "UPDATE-TEXT-MESSAGE":
+            case UPDATE_TEXT_MESSAGE:
                 this._state.messagePage.textMessage = action.text
                 this._renderFullPage()
                 break;
-            case "ADD-POST":
+            case ADD_POST:
                 if (this._state.profilePage.textPost == "") return
                 let newPost = {
                     id: 4,
@@ -52,7 +63,7 @@ let store = {
                 this._state.profilePage.textPost = ""
                 this._renderFullPage()
                 break;
-            case "ADD-MESSAGE":
+            case ADD_MESSAGE:
                 if (this._state.messagePage.textMessage == "") return
                 this._state.messagePage.messages.push(
                     {author: "I", message: this._state.messagePage.textMessage}
