@@ -8,9 +8,9 @@ const profileReducer = (state, action) =>{
     switch (action.type) {
         case UPDATE_TEXT_POST:
             state.textPost = action.text
-            break;
+            return state
         case ADD_POST:
-            if (state.textPost == "") return
+            if (state.textPost === "") return
             let newPost = {
                 id: 4,
                 comment: state.textPost,
@@ -18,9 +18,10 @@ const profileReducer = (state, action) =>{
             }
             state.posts.push(newPost)
             state.textPost = ""
-            break;
+            return state
+        default:
+            return state
     }
-    return state
 }
 
 export default profileReducer

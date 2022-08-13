@@ -8,16 +8,17 @@ const messageReducer = (state, action) =>{
     switch (action.type) {
         case UPDATE_TEXT_MESSAGE:
             state.textMessage = action.text
-            break;
+            return state
         case ADD_MESSAGE:
-            if (state.textMessage == "") return
+            if (state.textMessage === "") return
             state.messages.push(
                 {author: "I", message: state.textMessage}
             )
             state.textMessage = ""
-            break;
+            return state
+        default:
+            return state
     }
-    return state
 }
 
 export default messageReducer
