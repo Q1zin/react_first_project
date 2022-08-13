@@ -1,6 +1,6 @@
 import React from 'react';
 import classes from './AddPost.module.css'
-import {addPostActionCreator, updateTextPostActionCreator} from "../../../../redux/state";
+import {addPostActionCreator, updateTextPostActionCreator} from "../../../../redux/profile-reducer";
 
 const AddPost = (props) => {
     let elemTextPost = React.createRef()

@@ -1,6 +1,6 @@
 import React from 'react';
 import classes from "./AddMessage.module.css"
-import {addMessageActionCreator, updateTextMessageActionCreator} from "../../../../redux/state";
+import {addMessageActionCreator, updateTextMessageActionCreator} from "../../../../redux/message-reducer";
 
 const AddMessage = (props) => {
     let inputMessage = React.createRef()

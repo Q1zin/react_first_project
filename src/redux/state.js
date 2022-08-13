@@ -1,14 +1,5 @@
-const UPDATE_TEXT_POST = "UPDATE-TEXT-POST"
-const UPDATE_TEXT_MESSAGE = "UPDATE-TEXT-MESSAGE"
-const ADD_POST = "ADD-POST"
-const ADD_MESSAGE = "ADD-MESSAGE"
-
-
-
-export const updateTextPostActionCreator = (text)=>({type: UPDATE_TEXT_POST, text: text})
-export const updateTextMessageActionCreator = (text)=>({type: UPDATE_TEXT_MESSAGE, text: text})
-export const addPostActionCreator = ()=>({type: ADD_POST})
-export const addMessageActionCreator = ()=>({type: ADD_MESSAGE})
+import profileReducer from "./profile-reducer";
+import messageReducer from "./message-reducer";
 
 let store = {
     _state: {
@@ -43,35 +34,10 @@ let store = {
         return this._state
     },
     dispatch(action){
-        switch (action.type) {
-            case UPDATE_TEXT_POST:
-                this._state.profilePage.textPost = action.text
-                this._renderFullPage()
-                break;
-            case UPDATE_TEXT_MESSAGE:
-                this._state.messagePage.textMessage = action.text
-                this._renderFullPage()
-                break;
-            case ADD_POST:
-                if (this._state.profilePage.textPost == "") return
-                let newPost = {
-                    id: 4,
-                    comment: this._state.profilePage.textPost,
-                    likeCount: 0
-                }
-                this._state.profilePage.posts.push(newPost)
-                this._state.profilePage.textPost = ""
-                this._renderFullPage()
-                break;
-            case ADD_MESSAGE:
-                if (this._state.messagePage.textMessage == "") return
-                this._state.messagePage.messages.push(
-                    {author: "I", message: this._state.messagePage.textMessage}
-                )
-                this._state.messagePage.textMessage = ""
-                this._renderFullPage()
-                break;
-        }
+        this._state.profilePage = profileReducer(this._state.profilePage, action)
+        this._state.messagePage = messageReducer(this._state.messagePage, action)
+
+        this._renderFullPage()
     },
 }
 
