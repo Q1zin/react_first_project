@@ -6,11 +6,10 @@ const AddMessage = (props) => {
     let inputMessage = React.createRef()
 
     const changeTextMessage = ()=>{
-
-        props.dispatch(updateTextMessageActionCreator(inputMessage.current.value))
+        props.changeTextMessage(inputMessage.current.value)
     }
     const addMessage = ()=>{
-        props.dispatch(addMessageActionCreator())
+        props.addMessage()
     }
 
     return (

@@ -5,13 +5,12 @@ import Messages from "./Messages/Messages";
 import {addMessage, updateTextMessage} from "../../redux/state";
 
 const Dialogs = (props)=>{
+    let state = props.store.getState()
+
     return(
         <div className={classes.dialogsWrap}>
-            <DialogList state={props.state.dialogs} />
-            <Messages state={props.state.messages}
-                      textMessage={props.state.textMessage}
-                      dispatch={props.dispatch}
-            />
+            <DialogList state={state.messagePage.dialogs} />
+            <Messages store={props.store} />
         </div>
     )
 }

@@ -22,11 +22,9 @@ function App(props) {
                     <Route  path="/" element={shouldRedirect ? (<Navigate replace to="/profile" />) : (<Profile />)
                     } />
                     <Route index path="/profile" element={
-                        <Profile state={props.state.profilePage}
-                                 dispatch={props.dispatch} />} />
+                        <Profile store={props.store} />} />
                     <Route path="/messages/*" element={
-                        <Dialogs state={props.state.messagePage}
-                                 dispatch={props.dispatch} />} />
+                        <Dialogs store={props.store} />} />
                     <Route path="/news" element={<News />} />
                     <Route path="/music" element={<Music />} />
                     <Route path="/friends" element={<Friends />} />
